@@ -143,8 +143,8 @@ class ClassSchedule {
       createdBy: data['createdBy'] ?? '',
       isRecurring: data['isRecurring'] ?? true,
       recurringWeeks: data['recurringWeeks']?.cast<int>(),
-      createdAt: (data['createdAt'] as Timestamp?)?.toDate() ?? DateTime.now(),
-      updatedAt: (data['updatedAt'] as Timestamp?)?.toDate() ?? DateTime.now(),
+      createdAt: (data['createdAt'] as Timestamp?)?.toDate(),
+      updatedAt: (data['updatedAt'] as Timestamp?)?.toDate(),
     );
   }
   

@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:smart_campus_companion/firebase_options.dart';
 import 'package:smart_campus_companion/providers/auth_provider.dart';
 import 'package:smart_campus_companion/providers/class_schedule_provider.dart';
 import 'package:smart_campus_companion/routes/app_routes.dart';
@@ -9,8 +10,10 @@ import 'package:smart_campus_companion/theme/app_theme.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
-  // Initialize Firebase
-  await Firebase.initializeApp();
+  // Initialize Firebase with platform-specific options
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   
   runApp(const MyApp());
 }
